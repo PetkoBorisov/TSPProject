@@ -12,6 +12,7 @@ import 'package:chat_app/views/signin.dart';
 import 'package:chat_app/widgets/widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:chat_app/views/Profile.dart';
 
 class ChatRoom extends StatefulWidget {
 
@@ -63,12 +64,14 @@ class _ChatRoomState extends State<ChatRoom> {
   }
 
 
+  void _onItemTapped() {
 
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset("assets/images/logo.png",height: 50,),
+        title: Image.asset("assets/images/SocialForestLogoNew2.png",height: 25,),
         actions: [
           GestureDetector(
             onTap: (){
@@ -79,22 +82,76 @@ class _ChatRoomState extends State<ChatRoom> {
             },
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 16),
-                child: Icon(
-                    Icons.exit_to_app)),
+                child: Icon(Icons.exit_to_app)),
           )
         ],
       ),
       body: chatRoomList(),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.search),
-        onPressed: (){
-          Navigator.push(context, MaterialPageRoute(
-              builder: (context) => SearchScreen()
-          ));
+      backgroundColor: Colors.white10,
 
-        },
-
+      // floatingActionButton: FloatingActionButton(
+      //   child: Icon(Icons.add_comment_rounded),
+      //   onPressed: (){
+      //     Navigator.push(context, MaterialPageRoute(
+      //         builder: (context) => SearchScreen()
+      //     ));
+      //   },
+      // ),
+      //
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: Container(
+        padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            FloatingActionButton(
+              child: Icon(Icons.add_comment_rounded),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => SearchScreen()
+                  ));
+                },
+            ),
+            FloatingActionButton(
+              child: Icon(Icons.person_rounded),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => ProfileApp()
+                ));
+              },
+            ),
+          ],
+        ),
       ),
+
+
+
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: const <BottomNavigationBarItem>[
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home_rounded),
+      //       label: 'Home',
+      //       backgroundColor: Colors.blue,
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.add_a_photo_rounded),
+      //       label: 'Photo',
+      //
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.account_circle_rounded),
+      //       label: 'Profile',
+      //
+      //
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.settings),
+      //       label: 'Settings',
+      //
+      //     ),
+      //   ],
+      //
+      // ),
     );
   }
 }

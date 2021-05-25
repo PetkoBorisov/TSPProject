@@ -1,9 +1,13 @@
 import 'package:chat_app/helper/authenticate.dart';
 import 'package:chat_app/helper/helperFunctions.dart';
 import 'package:chat_app/views/chatRoomsScreen.dart';
+import 'package:chat_app/views/Profile.dart';
 import 'package:chat_app/views/signin.dart';
 import 'package:chat_app/views/signup.dart';
 import 'package:firebase_core/firebase_core.dart';
+
+import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() async {

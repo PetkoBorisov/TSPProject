@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 
 Widget appBarMain(BuildContext context){
   return AppBar(
-    title: Image.asset("assets/images/logo.png"
-    ,height: 60, width: 200),
+    title: Image.asset("assets/images/SocialForestLogoNew2.png"
+    ,height: 25,),
 
   );
 }
